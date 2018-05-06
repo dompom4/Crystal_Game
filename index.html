@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Crystal Game</title>
+
+  <!-- Boostrap Stylesheet -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script type="text/javascript" src="assets/javascript/game.js"></script>
+</head>
+<BR>
+    <BR>
+        <BR>
+<div class ="container">
+    <br>
+   <div class ="card-header"> <h1>Crystal Game</h1></div>
+   <BR>
+    
+   <P>You will be given a random number at the start of the game.
+   There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.
+   You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.
+   The value of each crystal is hidden from you until you click on it.
+   Each time the game starts, the game will change values of each crystal.</P>
+   <BR>
+    <center>
+    <div class="row" style="padding:5%; width:50%;">
+            <div class ="col-md-3"><img src ="assets/images/c1.png" id ="c1"></div>
+            <div class ="col-md-3"><img src ="assets/images/c4.png" id ="c2"></div>
+            <div class ="col-md-3"><img src ="assets/images/c3.png" id ="c3"></div>
+            <div class ="col-md-3"><img src ="assets/images/c2.png" id ="c4"></div>
+        </div>
+    </center>
+ <div class ="target" id = "targetn"></div>
+<div class ="scorebox" id ="score"></div>
+<div class ="winbox" id = "win"></div> 
+ <div class = "lossbox" id ="loss"></div>
+<BR>
+<BR>
+<BR>
+</div>
+  <!-- jQuery CDN -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+
+$(document).ready(function() {
+
+$("#targetn").html("Lucky Number: "+targetnumber);
+ $( "#win" ).html("Wins: "+wins);
+  
+  $("#loss").html("Losses: "+losses);
+  
+  $( "#score" ).html("Total score: "+totalscore);
+
+$( "#c1" ).click(function() {
+    clicksound.play();
+ totalscore = totalscore+crystal1;
+ $( "#score" ).html("Total score: "+totalscore);
+ checkscore();
+});
+
+$( "#c2" ).click(function() {
+    clicksound.play();
+ totalscore = totalscore+crystal2;
+ $( "#score" ).html("Total score: "+totalscore);
+ checkscore();
+});
+
+$( "#c3" ).click(function() {
+    clicksound.play();
+ totalscore = totalscore+crystal3;
+ $( "#score" ).html("Total score: "+totalscore);
+ checkscore();
+});
+
+$( "#c4" ).click(function() {
+    clicksound.play();
+ totalscore = totalscore+crystal4;
+ $( "#score" ).html("Total score: "+totalscore);
+ checkscore();
+});
+
+});
+    </script>
+  <!-- Bootstrap CDN -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script></script>
+</body>
+
+</html>
